@@ -1,0 +1,125 @@
+Test 1 Start - If empty, good news!
+(5%) MEMADD
+./Simulator a ../pppV2/programWithMemadd
+1c1
+< 38 Messages Loaded
+---
+> 41 Messages Loaded
+28c28
+< [9] m -1 19 (PC: 5, Accumulator: 4, PSW: 0 [----------------])
+---
+> [9] m -1 19 (PC: 5, Accumulator: 4, PSW: 8 [------------F---])
+39c39
+< [20] m -1 19 (PC: 5, Accumulator: 3, PSW: 0 [----------------])
+---
+> [20] m -1 19 (PC: 5, Accumulator: 3, PSW: 8 [------------F---])
+42c42
+< [23] y 0 0 (PC: 5, Accumulator: 3, PSW: 0 [----------------])
+---
+> [23] y 0 0 (PC: 5, Accumulator: 3, PSW: 8 [------------F---])
+53c53
+< [34] m -1 19 (PC: 5, Accumulator: 2, PSW: 0 [----------------])
+---
+> [34] m -1 19 (PC: 5, Accumulator: 2, PSW: 8 [------------F---])
+64c64
+< [45] m -1 19 (PC: 5, Accumulator: 1, PSW: 0 [----------------])
+---
+> [45] m -1 19 (PC: 5, Accumulator: 1, PSW: 8 [------------F---])
+67c67
+< [48] y 0 0 (PC: 5, Accumulator: 1, PSW: 0 [----------------])
+---
+> [48] y 0 0 (PC: 5, Accumulator: 1, PSW: 8 [------------F---])
+Test 1 End
+Test 2 Start - If empty, good news!
+(10%) Tratamiento errores creación proceso + LTS (5+5)
+./Simulator spm ../pppV2/notExisting  ../pppV2/programOnlyTrap3 ../pppV2/programTooBig ../pppV2/programWithNegativeSize ../pppV2/programWithOnlySize ../pppV2/programOnlyTrap3 ../pppV2/programWithNegativePriority ../pppV2/programWithTooMuchInstructions ../pppV2/programOnlyTrap3 ../pppV2/programOnlyTrap3
+1c1
+< 38 Messages Loaded
+---
+> 41 Messages Loaded
+Test 2 End
+Test 3 Start - If empty, good news!
+(5%) STS
+./Simulator a ../pppV2/yieldProgramDesc ../pppV2/programSleepingThrice
+1c1
+< 38 Messages Loaded
+---
+> 41 Messages Loaded
+Test 3 End
+Test 4 Start - If empty, good news!
+(15%) Llamada al sistema Yield
+./Simulator a ../pppV2/yieldProgramAsc ../pppV2/yieldProgramDesc
+1c1
+< 38 Messages Loaded
+---
+> 41 Messages Loaded
+33,41d32
+< 	[6] Running Process Information: [PID: 1, Priority: 33, WakeUp: 0, Queue: USER]
+< 	[6] Ready-to-run processes queue:
+< 		USER: [0,33]
+< 		DAEMONS: [3,100]
+< 	[6] SLEEPING Queue: 
+< 	[6] PID association with program's name:
+< 		PID: 0 -> ../pppV2/yieldProgramAsc
+< 		PID: 1 -> ../pppV2/yieldProgramDesc
+< 		PID: 3 -> SystemIdleProcess
+59,67d49
+< 	[21] Running Process Information: [PID: 0, Priority: 33, WakeUp: 0, Queue: USER]
+< 	[21] Ready-to-run processes queue:
+< 		USER: [1,33]
+< 		DAEMONS: [3,100]
+< 	[21] SLEEPING Queue: 
+< 	[21] PID association with program's name:
+< 		PID: 0 -> ../pppV2/yieldProgramAsc
+< 		PID: 1 -> ../pppV2/yieldProgramDesc
+< 		PID: 3 -> SystemIdleProcess
+86,94d67
+< 	[37] Running Process Information: [PID: 1, Priority: 33, WakeUp: 0, Queue: USER]
+< 	[37] Ready-to-run processes queue:
+< 		USER: [0,33]
+< 		DAEMONS: [3,100]
+< 	[37] SLEEPING Queue: 
+< 	[37] PID association with program's name:
+< 		PID: 0 -> ../pppV2/yieldProgramAsc
+< 		PID: 1 -> ../pppV2/yieldProgramDesc
+< 		PID: 3 -> SystemIdleProcess
+116,124d88
+< 	[56] Running Process Information: [PID: 0, Priority: 33, WakeUp: 0, Queue: USER]
+< 	[56] Ready-to-run processes queue:
+< 		USER: [1,33]
+< 		DAEMONS: [3,100]
+< 	[56] SLEEPING Queue: 
+< 	[56] PID association with program's name:
+< 		PID: 0 -> ../pppV2/yieldProgramAsc
+< 		PID: 1 -> ../pppV2/yieldProgramDesc
+< 		PID: 3 -> SystemIdleProcess
+Test 4 End
+Test 5 Start - If empty, good news!
+(25%) Sleep y Wakeup
+./Simulator a ../pppV2/programSleepingThrice ../pppV2/programSleepingTwice
+1c1
+< 38 Messages Loaded
+---
+> 41 Messages Loaded
+Test 5 End
+Test 6 Start - If empty, good news!
+(10%) Condiciones fin de simulación
+./Simulator a ../pppV2/programWithDivByZero ../pppV2/programWithHalt
+1c1
+< 38 Messages Loaded
+---
+> 41 Messages Loaded
+./Simulator a ../pppV2/noExist
+1c1
+< 38 Messages Loaded
+---
+> 41 Messages Loaded
+Test 6 End
+Test 7 Start - If empty, good news!
+(5%) Modo de ejecucion del procesador
+./Simulator a ../pppV2/programWithSleepHalt
+1c1
+< 38 Messages Loaded
+---
+> 41 Messages Loaded
+Test 7 End

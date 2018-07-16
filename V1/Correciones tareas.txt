@@ -1,0 +1,28 @@
+
+Entrega v1-1: 10/10
+
+
+Entrega v1-2: 9.5/10
+No sale USER: si la cola está vacía
+Diferencias de formato con espacios adicionales.
+
+10c10,11
+
+< 	DAEMONS:  [3,100]
+
+---
+
+> 	USER: 
+
+> 	DAEMONS: ...
+
+
+Entrega v1-3: 7.5/10
+Dejas procesos en el limbo (ninguno de los estados válidos) cuando les quitas de listos pero hay otro ejecutándose…
+Faltan cosas para que funcione la nueva llamada a sistema…
+
+
+
+Entrega FINAL V1:
+
+

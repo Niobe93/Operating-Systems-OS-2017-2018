@@ -1,0 +1,4 @@
+nota 9.00/10.00
+
+Todo bien la V2
+No termina la simulación si el ultimo programa de usuario da error y no crea proceso.

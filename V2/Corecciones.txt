@@ -1,0 +1,6 @@
+Problemas con overflow en MEMADD (dices que lo hay y no lo hay). 
+Faltan llamadas a PrintStatus pedidas (no se ve lo que va haciendo). 
+
+Corregir con el archivo diferencias de nestor. --> ya corregido 
+
+Nota--> 9,55/10
